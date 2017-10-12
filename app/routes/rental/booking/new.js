@@ -15,7 +15,7 @@ export default Ember.Route.extend({
       newBooking.set('rental', rental);
       newBooking.set('price', $('#booking_price').text())
       newBooking.save().then(() => {
-        this.transitionTo('rentals');
+        this.transitionTo('rental.booking.index');
       });
     },
     cancel() {
@@ -25,15 +25,12 @@ export default Ember.Route.extend({
       const rental = this.modelFor('rental');
       var start = this.currentModel.start_at
       var end = this.currentModel.end_at
-      Ember.$.ajax({
-        type: 'GET',
-        url: 'http://localhost:3000/rentals/' + rental.id,
-        success: function (data) {
-          var diff = new Date(end) - new Date(start);
-          var days = diff/1000/60/60/24;
-          $('#booking_price').html(days * data.rental.daily_rates);
-        }
-      });
+      var diff = new Date(end) - new Date(start);
+      var days = diff/1000/60/60/24;
+      if(!isNaN(diff)){
+        $('#price-curr').html('USD ')
+        $('#booking_price').html(days * rental.data.daily_rates);
+      }  
     }
   }
 });
