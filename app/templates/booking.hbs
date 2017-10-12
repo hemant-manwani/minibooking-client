@@ -1,0 +1,11 @@
+{{#link-to 'rental.booking.index' class='btn btn-primary'}}Back to the bookings list{{/link-to}}
+<div class="panel panel-default panel-area">
+  <div class="panel-heading">Booking Show</div>
+  <div class="panel-body">
+  	<p>Start At: {{model.start_at}}</p>
+	  <p>End At: {{model.end_at}}</p>
+    <p>Price: {{model.price}}</p>
+    <p>ClientEmail: {{model.client_email}}</p>
+  	{{#link-to 'rental.booking.new' class='btn btn-primary'}}New Booking{{/link-to}}
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="form-area">  
+  <form role="form">
+    <br style="clear:both">
+    <h3 style="margin-bottom: 25px; text-align: center;">Rental New</h3>
+    <div class="form-group">
+      {{input type="text" value=model.name placeholder='Name' class='form-control'}}
+    </div>
+    <div class="form-group">
+      {{input type="text" value=model.daily_rates placeholder='Daily Rates' class='form-control'}}
+    </div>
+    <a {{action 'save'}} class='btn btn-primary pull-right'>Save</a>
+    <a {{action 'cancel'}} class='btn btn-default pull-right'>Cancel</a>
+  </form>
+</div>

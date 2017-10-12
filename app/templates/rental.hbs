@@ -1,0 +1,9 @@
+{{#link-to 'rentals' class='btn btn-primary'}}Back to the Rentals list{{/link-to}}
+<div class="panel panel-default panel-area">
+  <div class="panel-heading">Rental Show</div>
+  <div class="panel-body">
+  	<p>{{model.name}}</p>
+  	<p>{{model.daily_rates}}</p>
+  	{{#link-to 'rental.booking.new' class='btn btn-primary'}}New Booking{{/link-to}}
+  </div>
+</div>

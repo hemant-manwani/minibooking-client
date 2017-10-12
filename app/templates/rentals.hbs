@@ -1,0 +1,30 @@
+<h4>Rentals Index</h4>
+{{#link-to 'rental.new' class='btn btn-primary pull-right'}}New Rental{{/link-to}}
+<table id="mytable" class="table table-bordred table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>NAME</th>
+      <th>DAILY RATES</th>
+      <th>ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |rental|}}
+      <tr>
+        <td>{{rental.id}}</td>
+        <td>{{rental.name}}</td>
+        <td>{{rental.daily_rates}}</td>
+        <td>{{#link-to 'rental' rental class='btn btn-success'}}Show{{/link-to}}</td>
+        <td>
+          <p data-placement="top" data-toggle="tooltip" title="Edit">
+            {{#link-to 'rental.edit' rental class='btn btn-primary'}}Edit{{/link-to}}
+          </p>
+        </td>  
+        <td>
+          <a {{action 'delete' rental}} class='btn btn-danger'>Delete</a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
