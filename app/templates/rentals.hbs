@@ -22,7 +22,7 @@
           </p>
         </td>  
         <td>
-          <a {{action 'delete' rental}} class='btn btn-danger'>Delete</a>
+          <a {{action 'delete' rental}} onclick="return confirm('Are you sure?')" class='btn btn-danger'>Delete</a>
         </td>
       </tr>
     {{/each}}
