@@ -6,5 +6,6 @@ export default DS.Model.extend({
   client_email: DS.attr('string'),
   price: DS.attr('string'),
   rental_id: DS.attr('string'),
+  rental_name: DS.attr('string'),
   rental: DS.belongsTo('rental')
 });

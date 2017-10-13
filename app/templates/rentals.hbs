@@ -6,6 +6,7 @@
       <th>ID</th>
       <th>NAME</th>
       <th>DAILY RATES</th>
+      <th>Total Bookings</th>
       <th>ACTIONS</th>
     </tr>
   </thead>
@@ -15,6 +16,7 @@
         <td>{{rental.id}}</td>
         <td>{{rental.name}}</td>
         <td>{{rental.daily_rates}}</td>
+        <td>{{rental.total_bookings}}</td>
         <td>{{#link-to 'rental' rental class='btn btn-success'}}Show{{/link-to}}</td>
         <td>
           <p data-placement="top" data-toggle="tooltip" title="Edit">
@@ -28,3 +30,4 @@
     {{/each}}
   </tbody>
 </table>
+{{#link-to 'rental.booking.index' class='btn btn-success'}}View Bookings{{/link-to}}

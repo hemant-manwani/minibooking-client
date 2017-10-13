@@ -1,4 +1,5 @@
 <h3>Booking Index</h3>
+{{#link-to 'rentals' class='btn btn-primary'}}Back to Rentals{{/link-to}}
 <table id="mytable" class="table table-bordred table-striped">
   <thead>
     <tr>
@@ -7,17 +8,19 @@
       <th>End At</th>
       <th>Client Email</th>
       <th>Price</th>
+      <th>Rental Name</th>
       <th>ACTIONS</th>
     </tr>
   </thead>
   <tbody>
     {{#each model as |booking|}}
       <tr>
-        <td>{{booking.id}}</td>
+        <td>{{booking.id}}{{booking.rental.id}}</td>
         <td>{{booking.start_at}}</td>
         <td>{{booking.end_at}}</td>
         <td>{{booking.client_email}}</td>
         <td>{{booking.price}}</td>
+        <td>{{booking.rental_name}}</td>
         <td><a {{action 'show' booking}} class="btn btn-success">Show</a></td>
         <td>{{#link-to 'rental.booking.edit' booking class="btn btn-primary"}}Edit{{/link-to}}</td>
         <td><a {{action 'delete' booking}} onclick="return confirm('Are you sure?')" class="btn btn-danger">Delete</a></td>
