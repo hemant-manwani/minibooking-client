@@ -16,7 +16,7 @@ export default Ember.Route.extend({
     cancel: function() {
       this.transitionTo('rental.booking.index');
     },
-    calculatePrice(booking){
+    calculatePrice(){
       var rental_id = this.currentModel.data.rental_id
       var start = $('.start-at').val();
       var end = $('.end-at').val();

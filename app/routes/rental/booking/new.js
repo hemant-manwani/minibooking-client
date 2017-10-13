@@ -21,7 +21,7 @@ export default Ember.Route.extend({
     cancel() {
       this.transitionTo('rentals');
     },
-    calculatePrice(booking){
+    calculatePrice(){
       const rental = this.modelFor('rental');
       var start = this.currentModel.start_at
       var end = this.currentModel.end_at

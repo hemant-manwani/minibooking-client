@@ -1,4 +1,7 @@
 import DS from 'ember-data';
+import $ from 'jquery';
+import Ember from 'ember';
+
 
 export default DS.RESTAdapter.extend({
   host: 'http://localhost:3000',
@@ -10,7 +13,6 @@ export default DS.RESTAdapter.extend({
   },
   isInvalid(status, headers, payload){ 
     $('.validation-error').html('');
-    var errors = []
     if (status===422) { 
       $.each( payload.errors, function( key, value ) {
         $('.validation-error').append(Ember.String.classify(key) + ": " + value + '<br/>');

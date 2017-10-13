@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-	model: function(params) {return this.store.findAll('booking');},
+	model: function() {return this.store.findAll('booking');},
 	actions: {
     delete(booking) {
       booking.deleteRecord();
