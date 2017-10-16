@@ -1,14 +1,18 @@
-import Ember from 'ember';
+import Ember from 'ember'
 
 export default Ember.Route.extend({
-	model: function() {return this.store.findAll('booking');},
-	actions: {
+	model() {
+    return this.store.findAll('booking')
+  },
+	
+  actions: {
     delete(booking) {
-      booking.deleteRecord();
-      booking.save();
+      booking.deleteRecord()
+      booking.save()
     },
+
     show(booking) {
-      this.transitionTo('booking', booking);
+      this.transitionTo('booking', booking)
     }
   }
-});
+})

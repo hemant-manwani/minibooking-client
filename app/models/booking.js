@@ -1,4 +1,4 @@
-import DS from 'ember-data';
+import DS from 'ember-data'
 
 export default DS.Model.extend({
   start_at: DS.attr('string'),
@@ -8,4 +8,4 @@ export default DS.Model.extend({
   rental_id: DS.attr('string'),
   rental_name: DS.attr('string'),
   rental: DS.belongsTo('rental')
-});
+})
