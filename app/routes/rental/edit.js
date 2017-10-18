@@ -9,7 +9,7 @@ export default Ember.Route.extend({
 
     save() {  
       this.controller.get('model').save().then(() => {
-        self.transitionTo('rentals')
+        this.transitionTo('rentals')
       }, (error) => {
           Ember.Logger.debug(error)
       })
